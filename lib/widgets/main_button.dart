@@ -15,11 +15,28 @@ class MainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width ?? MediaQuery.of(context).size.width * 0.25,
-        height: height ?? 45,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12), color: Colors.blue),
-        child: ElevatedButton(onPressed: action, child: Text(title)));
+    return InkWell(
+      onTap: action,
+      child: Ink(
+        child: Container(
+            alignment: Alignment.center,
+            width: width ?? MediaQuery.of(context).size.width * 0.35,
+            height: height ?? 45,
+            decoration: BoxDecoration(
+                border: Border.all(
+                  color: const Color(0xff1D4350),
+                  width: 2,
+                ),
+                borderRadius: BorderRadius.circular(2),
+                color: Colors.transparent),
+            child: Text(
+              title,
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontFamily: "Monospace",
+                  fontWeight: FontWeight.bold),
+            )),
+      ),
+    );
   }
 }

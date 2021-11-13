@@ -27,6 +27,7 @@ class _HomePageState extends State<HomePage> {
             itemCount: _clothesList.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
+                childAspectRatio: 3/7,
                 crossAxisSpacing: _gadgetWidth * 0.05,
                 mainAxisSpacing: _gadgetWidth * 0.05),
             itemBuilder: (BuildContext context, idx) {
@@ -47,6 +48,7 @@ class _HomePageState extends State<HomePage> {
               );
             }),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: const Color(0xff414345),
           onPressed: () =>
               Navigator.of(context).pushNamed('/product_add').then((_) {
             setState(() {});

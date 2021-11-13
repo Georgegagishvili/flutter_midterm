@@ -12,21 +12,23 @@ class SingleProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Clothes _singleItem = ProductHelper().getProductById(id);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                border: Border.all(color: Colors.indigo)),
+    return Card(
+      color: Colors.transparent,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      elevation: 0,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Align(
+            alignment: Alignment.center,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(16),
               child: FadeInImage(
+                height: MediaQuery.of(context).size.height * 0.35,
                 width: MediaQuery.of(context).size.width,
-                height:
-                    (MediaQuery.of(context).size.height - kToolbarHeight) * 0.2,
                 fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
                 fadeInDuration: const Duration(milliseconds: 300),
                 placeholder:
                     const AssetImage('assets/clothes/clothes_placeholder.png'),
@@ -35,7 +37,7 @@ class SingleProduct extends StatelessWidget {
                         _singleItem.imageUrl,
                       )
                     : const NetworkImage(
-                        'https://via.placeholder.com/300/09f/fff.png%20C/'),
+                        'https://via.placeholder.com/300/414345/ffffff.png'),
                 imageErrorBuilder: (context, obj, trace) {
                   return Image(
                     image: const AssetImage(
@@ -46,10 +48,59 @@ class SingleProduct extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        Text(_singleItem.name),
-        Text("${_singleItem.price}\$"),
-      ],
+          Flexible(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  _singleItem.name,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      fontFamily: 'Monospace',
+                      color: Colors.black,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600),
+                ),
+                Flexible(
+                  child: Text(
+                    "${_singleItem.price}\$",
+                    style: const TextStyle(
+                        fontFamily: 'Monospace',
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          InkWell(
+            onTap: () => Navigator.of(context).pushNamed(
+                '/product_detailed',
+                arguments: {"prodId": _singleItem.id}).then((_) {
+            }),
+            child: Ink(
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.35,
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    border: Border.all(color: Colors.black, width: 2)),
+                child: const Text(
+                  "See More",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "Roboto",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

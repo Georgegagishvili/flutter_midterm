@@ -5,48 +5,48 @@ List<Clothes> dummyData = [
       id: 1,
       name: 'T-Shirt',
       imageUrl:
-      'https://cdn.pixabay.com/photo/2017/01/13/04/56/blank-1976334_1280.png',
+          'https://cdn.shopify.com/s/files/1/0208/1039/9793/products/product-image-1655598648_360x.jpg?v=1636605233',
       size: 'M',
       price: 100.0,
       description: 'Nice T-Shirt for every day use'),
   Clothes(
       id: 2,
-      name: 'Jeans',
+      name: 'Casual Shirt',
       imageUrl:
-      'https://cdn.pixabay.com/photo/2020/03/02/12/13/jeans-4895576_1280.jpg',
+          'https://cdn.shopify.com/s/files/1/0208/1039/9793/products/product-image-1876055659_360x.jpg?v=1636605638',
       size: 'L',
       price: 99.9,
-      description: 'Cool Jeans for the cool people'),
+      description: 'Casual shirt for everyday use'),
   Clothes(
       id: 3,
-      name: 'Jacket',
-      imageUrl:
-      'https://live.staticflickr.com/5582/14201538184_e74443161b_b.jpg',
-      size: 'XS',
-      price: 50.45,
-      description: 'Fashion Jacket for people with taste'),
-  Clothes(
-      id: 4,
-      name: 'Sweater',
-      imageUrl:
-      'https://cdn.pixabay.com/photo/2019/08/27/05/04/ugly-sweater-4433379_1280.png',
-      size: 'S',
-      price: 30.0,
-      description: 'Warm Sweater for the cold days'),
-  Clothes(
-      id: 5,
       name: 'Trousers',
       imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/9/93/Swiss_Army_gray_wool_blend_trousers_%2815367958348%29.jpg',
-      size: 'M',
-      price: 20.0,
+          'https://cdn.shopify.com/s/files/1/0208/1039/9793/products/product-image-867013824_360x.jpg?v=1569362379',
+      size: 'XS',
+      price: 50.45,
       description: 'Nice pair of casual trousers'),
   Clothes(
-      id: 6,
-      name: 'Coat',
+      id: 4,
+      name: 'Hoodie',
       imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/c/ca/Coat%2C_frock_%28AM_693379-4%29.jpg',
+          'https://cdn.shopify.com/s/files/1/0208/1039/9793/products/product-image-1856876265_360x.jpg?v=1636419769',
+      size: 'S',
+      price: 30.0,
+      description: 'Nice T-Shirt for every day use'),
+  Clothes(
+      id: 5,
+      name: 'Gradient T-Shirt',
+      imageUrl:
+          'https://cdn.shopify.com/s/files/1/0208/1039/9793/products/product-image-1765513839_360x.jpg?v=1636418971',
+      size: 'M',
+      price: 20.0,
+      description: 'A new stylish T-Shirt'),
+  Clothes(
+      id: 6,
+      name: 'Berserker T-Shirt',
+      imageUrl:
+          'https://myfrogtee.com/wp-content/uploads/2018/12/viking-berserker-shirt.jpg',
       size: 'XXL',
       price: 75.35,
-      description: 'Very good Coat for everybody'),
+      description: 'Cool T-Shirt for berserker lovers'),
 ];

@@ -12,13 +12,25 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 10,
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: <Color>[Color(0xff232526), Color(0xff414345)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter)),
+      ),
       title: Text(
         title,
-        style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        style: TextStyle(
+            fontSize: MediaQuery.of(context).size.width * 0.06,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Monospace'),
       ),
       actions: [
-        onDelete != null ?
-        IconButton(onPressed: onDelete, icon: const Icon(Icons.delete)) : Container()
+        onDelete != null
+            ? IconButton(onPressed: onDelete, icon: const Icon(Icons.delete))
+            : Container()
       ],
       centerTitle: true,
     );

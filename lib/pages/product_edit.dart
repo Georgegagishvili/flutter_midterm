@@ -47,11 +47,17 @@ class _ProductEditPageState extends State<ProductEditPage> {
       appBar: const DefaultAppBar('Edit Product', null),
       body: ListView(
         padding: EdgeInsets.symmetric(
-            vertical: MediaQuery.of(context).size.height * 0.07,
+            vertical: MediaQuery.of(context).size.height * 0.03,
             horizontal: 15),
         children: [
           Column(
             children: [
+              ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image(
+                    image: NetworkImage(_singleItem.imageUrl),
+                    fit: BoxFit.cover,
+                  )),
               for (var idx = 0;
                   idx < _textControllers.keys.toList().length;
                   idx++)
@@ -68,17 +74,22 @@ class _ProductEditPageState extends State<ProductEditPage> {
             ],
           ),
           Padding(
-            padding:
-                EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
+            padding: EdgeInsets.only(
+              top: MediaQuery.of(context).size.height * 0.05,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 MainButton(
-                    title: 'BACK', action: () => Navigator.of(context).pop()),
+                  title: 'BACK',
+                  action: () => Navigator.of(context).pop(),
+                ),
                 MainButton(
                     title: 'EDIT',
-                    action: () =>
-                        _validateProduct(_singleItem, _textControllers)),
+                    action: () => _validateProduct(
+                          _singleItem,
+                          _textControllers,
+                        )),
               ],
             ),
           )

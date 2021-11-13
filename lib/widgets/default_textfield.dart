@@ -15,7 +15,7 @@ class DefaultTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.indigo),
+        border: Border.all(color: const Color(0xff1D4350)),
         borderRadius: BorderRadius.circular(6)
       ),
       child: TextFormField(controller: controller,decoration: InputDecoration(

@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.white
       ),
+      initialRoute: '/',
       routes: {
         "/" : (ctx) => const HomePage(),
         "/product_detailed" : (ctx) => const ProductDetailedPage(),
